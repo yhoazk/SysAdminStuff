@@ -5,7 +5,7 @@ Linux and windows cofigurations snippets
 
 ## Mount a `LVM` in linux.
 
-####Commands:
+#### Commands:
 `pvs`:
      pvs — report information about physical volumes
 
@@ -21,3 +21,10 @@ To mount use the regular procedure:
     `mount mount /dev/vg_<host>/lv_home ./HD_Laptopo`
 
 
+## Windows:
+
+#### Share a location:
+`net share <share_name>=<full path> /GRANT:<user>,[READ | CHANGE | FULL]`
+
+#### Look what is being shared:
+`net share`
