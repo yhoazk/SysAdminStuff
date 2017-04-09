@@ -1,7 +1,7 @@
 # SysAdminStuff
 Linux and windows cofigurations snippets
 
-
+#### Linux 
 
 ## Mount a `LVM` in linux.
 
@@ -19,6 +19,13 @@ To mount use the regular procedure:
     `mkdir HD_Laptopo`
 2. Mount as a regular partion
     `mount mount /dev/vg_<host>/lv_home ./HD_Laptopo`
+
+#### Command line open image from console for gnome:
+`eog <path to image>`
+
+
+#### Call the configured service to open a specific file:
+`xdg-open <path to file>
 
 
 ## Windows:
