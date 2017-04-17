@@ -35,3 +35,10 @@ To mount use the regular procedure:
 
 #### Look what is being shared:
 `net share`
+
+
+### Discover connected devices in the network
+```
+ping 192.168.1.255
+arp -n
+```
