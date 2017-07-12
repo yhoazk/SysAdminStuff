@@ -42,3 +42,9 @@ To mount use the regular procedure:
 ping 192.168.1.255
 arp -n
 ```
+
+
+### Encrypt files in device
+
+[https://www.veracrypt.fr/en/Home.html](https://www.veracrypt.fr/en/Home.html)
+
