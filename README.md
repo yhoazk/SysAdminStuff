@@ -48,3 +48,15 @@ arp -n
 
 [https://www.veracrypt.fr/en/Home.html](https://www.veracrypt.fr/en/Home.html)
 
+
+#### Find strings in files
+For Windows
+```
+findstr /spin /c:"find in text" C:\<path>
+```
+
+For linux
+```
+grep -Riln "Text to find" /<path>
+```
+
