@@ -71,3 +71,18 @@ and so on
 ^D
 ```
 Done
+
+
+##### `setuid` and `setgid`
+
+`setuid` and `setgid` are Unix access rights flags that allow users to run an executable with the permissions of the executable's owner or group respectively and to change behaviour in directories.
+
+
+
+# Virtualization vs Containers
+
+
+
+
+# Create self cointained installation packages
+
