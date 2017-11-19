@@ -60,3 +60,14 @@ For linux
 grep -Riln "Text to find" /<path>
 ```
 
+
+### Complicated way to write files when there's no editor.
+
+```
+$ cat > filename.txt
+write stuff
+other stuff
+and so on
+^D
+```
+Done
