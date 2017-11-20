@@ -29,6 +29,10 @@ To mount use the regular procedure:
 
 
 ## Windows:
+#### [Change the prompt in cmd](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/prompt.mspx?mfr=true)
+```
+prompt $$
+```
 
 #### Share a location:
 `net share <share_name>=<full path> /GRANT:<user>,[READ | CHANGE | FULL]`
