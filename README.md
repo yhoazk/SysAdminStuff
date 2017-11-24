@@ -81,6 +81,19 @@ Done
 
 `setuid` and `setgid` are Unix access rights flags that allow users to run an executable with the permissions of the executable's owner or group respectively and to change behaviour in directories.
 
+### Using `/etc/skel` (skel = skeleton?)
+
+The `/etc/skel` is a directory used by the command `useradd` to create
+the default settings in a new user's home directory.
+
+```
+roor@pc/etc/skel#ls -a
+. .. .bashrc .profile
+```
+
+The settings for the command `useradd` can be changed by editing
+`/etc/default/useradd`
+
 
 
 # Virtualization vs Containers
