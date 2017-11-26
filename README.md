@@ -23,6 +23,11 @@ To mount use the regular procedure:
 #### Command line open image from console for gnome:
 `eog <path to image>`
 
+#### Get disply settings in console:
+`xdpyinfo`
+
+Get the display size:
+`xdpyinfo | grep dim`
 
 #### Call the configured service to open a specific file:
 `xdg-open <path to file>
