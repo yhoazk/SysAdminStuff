@@ -100,11 +100,23 @@ The settings for the command `useradd` can be changed by editing
 `/etc/default/useradd`
 
 
+## `wget` in windows
 
-# Virtualization vs Containers
+To get files available via http:
+```
+cmd > ps
+:: in power shell is an alias for Invoke-WebRequest
+wget https://www.example.com -OutFile out.html
+:: for older PS versions
+Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
+```
+
+
+
+## Virtualization vs Containers
 
 
 
 
-# Create self cointained installation packages
+## Create self cointained installation packages
 
