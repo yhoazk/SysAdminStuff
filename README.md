@@ -68,6 +68,10 @@ For linux
 ```
 grep -Riln "Text to find" /<path>
 ```
+#### Ecexute command on a file matching pattern
+```
+find -name "*.swp" - exec rm {} ';' # The command must be terminated with ';' or '\;'
+```
 
 
 ### Complicated way to write files when there's no editor.
