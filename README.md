@@ -38,7 +38,10 @@ Get the display size:
 ```
 prompt $$
 ```
-
+### Go to sleep:
+```
+rundll32.exe powrprof.dll,SetSuspendState 0,1,0
+```
 #### Share a location:
 `net share <share_name>=<full path> /GRANT:<user>,[READ | CHANGE | FULL]`
 
