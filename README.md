@@ -3,7 +3,7 @@ Linux and windows cofigurations snippets
 
 #### Linux 
 
-## Mount a `LVM` in linux.
+## [Mount a `LVM` in linux.](http://www.digitage.co.uk/digitage/library/linux/mounting-external-lvm-disk-in-linux)
   - Connect the drive
   - run the command `lvm`
     - Inside the `lvm` terminal
@@ -12,6 +12,13 @@ Linux and windows cofigurations snippets
     - `lvchange -ay /dev/{pv-name-here}` eg ` lvchange -ay /dev/fedora_a/home`
   - Now mount the dive with that name: `sudo mount /dev/fedora_a/home /tmp/fed24/`
   - Here the drive is ready for use in `/tmp/fed24`
+  
+  To remove the disk:
+  
+  - umount /mnt
+  - lvm
+    - lvchange -an /dev/{pv-name-here}
+
 
 #### Commands:
 `pvs`:
