@@ -4,6 +4,14 @@ Linux and windows cofigurations snippets
 #### Linux 
 
 ## Mount a `LVM` in linux.
+  - Connect the drive
+  - run the command `lvm`
+    - Inside the `lvm` terminal
+    - `pvscan` <- (note the PV name)
+    - `lvscan` <- (note the LV names)
+    - `lvchange -ay /dev/{pv-name-here}` eg ` lvchange -ay /dev/fedora_a/home`
+  - Now mount the dive with that name: `sudo mount /dev/fedora_a/home /tmp/fed24/`
+  - Here the drive is ready for use in `/tmp/fed24`
 
 #### Commands:
 `pvs`:
