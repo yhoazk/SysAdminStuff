@@ -59,11 +59,25 @@ set t_Co=256
 ### Install ultimate gvim
 
 
-
+## Releasing space in fedora
 ### Clean occupied space in `/var/cache/PackageKit`
-
 
 This behaviour is a documented [bug](https://bugs.freedesktop.org/show_bug.cgi?id=80053#c6) and the contents can be cleared with the next command:
 ```
 $ sudo pkcon refresh force -c -11
 ```
+
+### Cleaning the `journal`
+
+Keep logs of only the 2 past days.
+```
+sudo journal --vacuum-time=2d
+```
+Or specify the capacity to be used in the storage:
+
+```
+sudo journalctl --vacuum-size=500M
+```
+
+This values can be specified in the configuration file: `/etc/sytemd/journal.conf`
+After any modification of those values the daemon must be restarted
