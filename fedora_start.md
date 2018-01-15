@@ -57,4 +57,10 @@ set t_Co=256
 
 
 
-### 
+### Clean occupied space in `/var/cache/PackageKit`
+
+
+This behaviour is a documented [bug](https://bugs.freedesktop.org/show_bug.cgi?id=80053#c6) and the contents can be cleared with the next command:
+```
+$ sudo pkcon refresh force -c -11
+```
