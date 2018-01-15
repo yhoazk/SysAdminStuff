@@ -7,7 +7,9 @@ Fedora provides group install packager, to list the available packages: `dnf gro
 To install one of the listed packages: `dnf groupinstall "<NameOfThePackage>"`
 
 ### Install powerline for terminal
+
 [src](https://fedoramagazine.org/add-power-terminal-powerline/)
+
 ```
 sudo dnf install powerline powerline-fonts
 ```
@@ -23,7 +25,7 @@ fi
 ```
 
 Now for `tmux`:
-c
+```
 sudo dnf install tmux-powerline
 ```
 
@@ -53,6 +55,7 @@ set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
 ```
+
 ### Install ultimate gvim
 
 
