@@ -165,5 +165,18 @@ Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 
 
 
-## Create self cointained installation packages
+## Create self cointained installation packages for linux/RH
+
+## Path too long in windows
+
+There are at least 2 possiblities:
+### 1. The command `subst`
+This command creates a virtual drive with the given path:
+```
+subst z: b:\user\betty\forms :: creates the z: virtual drive pointing to c:\user\betty\forms
+subst z: \d :: delete the virtual drive
+```
+### 2. The [`\\?\`](https://reverseengineering.stackexchange.com/questions/3798/c-question-marks-in-paths)
+
+
 
