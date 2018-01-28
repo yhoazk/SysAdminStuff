@@ -178,5 +178,5 @@ subst z: \d :: delete the virtual drive
 ```
 ### 2. The [`\\?\`](https://reverseengineering.stackexchange.com/questions/3798/c-question-marks-in-paths)
 
-
+https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
 
