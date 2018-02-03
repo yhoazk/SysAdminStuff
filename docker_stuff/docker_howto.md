@@ -4,7 +4,7 @@ The `Dockerfile` is a script which contains a collection of docker commands and
 operating system commands. Below are the most common docker commands.
 
 * `FROM`
-  -
+  - TODO
 * `MAINTAINER`
   - Optional, contains the name of the maintainer of the image.
 * `RUN`
@@ -21,7 +21,7 @@ operating system commands. Below are the most common docker commands.
   - Define the default command that will be executed when the container is
   running.
 * `WORKDIR`
-  -
+  - TODO
 * `USER`
   - Set the user or UID for the container created with the image.
 * `VOLUME`
