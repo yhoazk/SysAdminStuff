@@ -158,6 +158,10 @@ wget https://www.example.com -OutFile out.html
 Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 ```
 
+## Which `tty` is being used:
+To know which tty device is currently in use, use the command `tty`
+which returns the device being used.
+
 
 
 ## Virtualization vs Containers
