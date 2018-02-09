@@ -162,7 +162,11 @@ Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 To know which tty device is currently in use, use the command `tty`
 which returns the device being used.
 
-
+## The install command:
+Install with non-sudo permisions in a `/` folder:
+```
+sudo install -d -o $(whoami) -g $(whoami) <folder_name>
+```
 
 ## Virtualization vs Containers
 
