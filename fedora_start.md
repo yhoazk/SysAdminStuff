@@ -71,7 +71,7 @@ $ sudo pkcon refresh force -c -11
 
 Keep logs of only the 2 past days.
 ```
-sudo journal --vacuum-time=2d
+sudo journalctl --vacuum-time=2d
 ```
 Or specify the capacity to be used in the storage:
 
