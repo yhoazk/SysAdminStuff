@@ -28,3 +28,47 @@ For help installing Jenkins execute the command:
 ```
 java -jar jenkins.war -help
 ```
+
+## Install Jenkins in a Linux machine
+
+
+For the different `*inx` flavours there is a guide on how to add the jenkins
+repository to the package store. Follow the directions in: [`pkg.jenkins-ci.org`.](https://pkg.jenkins-ci.org)
+
+We will follow the Debian steps as most of the people use fkn Ubuntu:
+- Add the repository to the system:
+```
+wget -q -O https://pkg.jenkis.io/debian/jenkins.io.key | sudo apt-key add -
+```
+
+Then add the following entry in your `/etc/apt/sources.list`
+```
+deb https://pkg.jenkins.io/debian binary/
+```
+
+
+*NOTE:* Jenkins does not work with Java 9, then is needed to install JRE 7 or 8.
+
+- Update the locak package index, and finally install jenkins
+
+```
+sudo apt-get update
+sudo apt-get install jenkins
+```
+
+- - -
+
+## For RH nix systems:
+
+This still works in FC-24
+```
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https:/pkg.jenkins.io/redhat/jenkins.io.key
+```
+Now install it:
+```
+sudo dnf install jenkins
+```
+
+
+
