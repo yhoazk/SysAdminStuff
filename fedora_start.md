@@ -66,8 +66,28 @@ This behaviour is a documented [bug](https://bugs.freedesktop.org/show_bug.cgi?i
 ```
 $ sudo pkcon refresh force -c -11
 ```
+Also modify the settings file located in:
+```
+/etc/PackageKit/PackageKit.conf
+```
+And remove the comment from:
+```
+# Keep the packages after they have been downloaded
+#KeepCache=false
+```
+
 
 ### Cleaning the `journal`
+
+To verify the disk occupied by journal use the command:
+```
+journalctl --disk-usage
+```
+
+To force a log roation:
+```
+sudo systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
+```
 
 Keep logs of only the 2 past days.
 ```
@@ -81,3 +101,21 @@ sudo journalctl --vacuum-size=500M
 
 This values can be specified in the configuration file: `/etc/sytemd/journal.conf`
 After any modification of those values the daemon must be restarted
+
+
+### Abort logs:
+
+The abort logs are located in: `/var/cache/abrt-di/*`.
+
+The size of those logs can be controlled by modifying the file
+`/etc/abrt/abrt.conf`
+Modify the line:
+```
+# Max size for crash storage [MiB] or 0 for unlimited
+MaxCrashReportsSize = 1000
+```
+
+That is for the logs, but now for the total size of the abrt files, is the file
+`/etc/abrt/plugins/CCpp.conf`
+
+The setting to modify: `DebugInfoCacheMB = 200`
