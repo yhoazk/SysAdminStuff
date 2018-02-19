@@ -5,6 +5,7 @@ which is normally not created in: `/etc/apt/`.
 
 Add a Aquire for each of the protocols mapped:
 ```
-Acquire::http::Proxy "http://user:passwdproxy.com:8080";
-Acquire::https::Proxy "https://user:passwdproxy.com:8080";
+Acquire::http::proxy "http://user:passwd@proxy.com:8080";
+Acquire::https::proxy "https://user:passwd@proxy.com:8080";
+Acquire::ftp::proxy "ftp://user:passwd@proxy.com:8080";
 ```
