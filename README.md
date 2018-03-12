@@ -1,7 +1,7 @@
 # SysAdminStuff
 Linux and windows cofigurations snippets
 
-#### Linux 
+#### Linux
 
 ## [Mount a `LVM` in linux.](http://www.digitage.co.uk/digitage/library/linux/mounting-external-lvm-disk-in-linux)
   - Connect the drive
@@ -12,9 +12,9 @@ Linux and windows cofigurations snippets
     - `lvchange -ay /dev/{pv-name-here}` eg ` lvchange -ay /dev/fedora_a/home`
   - Now mount the dive with that name: `sudo mount /dev/fedora_a/home /tmp/fed24/`
   - Here the drive is ready for use in `/tmp/fed24`
-  
+
   To remove the disk:
-  
+
   - umount /mnt
   - lvm
     - lvchange -an /dev/{pv-name-here}
@@ -77,18 +77,25 @@ arp -n
 
 
 #### Find strings in files
-For Windows
+##### For Windows
 ```
-findstr /spin /c:"find in text" C:\<path>
+findstr /spin /c:"find in text" [files]
 ```
+* `s`: recursive
+* `p`: skip non-printable chars
+* `i`: case insensitive
+* `n`: Print line numbers
+* `/c:`: String to look up
+* `[files]`: a regex for the file name e.g.: `c_*.h`
 
-For linux
+##### For linux
 ```
 grep -Riln 'Text to find' /<path>
 ```
 
+```
 grep -rnw '/path/to/somewhere/' -e 'pattern'
-
+```
     -r or -R is recursive,
     -n is line number, and
     -w stands for match the whole word.
@@ -111,7 +118,7 @@ Along with these, --exclude, --include, --exclude-dir flags could be used for ef
 
 
 
-#### Ecexute command on a file matching pattern
+#### Execute command on a file matching pattern
 ```
 find -name "*.swp" - exec rm {} ';' # The command must be terminated with ';' or '\;'
 ```
@@ -187,4 +194,3 @@ subst z: \d :: delete the virtual drive
 ### 2. The [`\\?\`](https://reverseengineering.stackexchange.com/questions/3798/c-question-marks-in-paths)
 
 https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
-
