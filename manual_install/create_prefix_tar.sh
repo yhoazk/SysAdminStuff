@@ -15,7 +15,7 @@ create_pkg(){
         cp -r $1/cfg $TMP_DIR
         mv $TMP_DIR/cfg $TMP_DIR/etc
         TRANS=s,^\.,$1, # Without quotes
-        #tar czvf $1_deploy.tar.gz --transform  's,^,simpleSomeIP_Rx/,' -C $TMP_DIR .
+        #tar czvf $1_deploy.tar.gz --transform  's,^,APP_NAME/,' -C $TMP_DIR .
         ## Pack the files excluding vi bkps and adding the preffix with
         ## the name of the application
         tar czvf $1_deploy.tar.gz --exclude '*~' --transform  $TRANS -C $TMP_DIR .
