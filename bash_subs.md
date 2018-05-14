@@ -31,7 +31,13 @@ Here are some of the commands which create a subshell.
 
 
 
-
+## Example:
+This demostrates the shell specifics, the `BASHPID` is unique to the shell,
+then the second number is always the same, but the first changes as is in a
+sub-shell.
+```
+echo $(echo $BASHPID) $BASHPID
+```
 
 
 ## Is a sub-shell the same as a child-shell?
