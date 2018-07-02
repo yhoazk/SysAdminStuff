@@ -69,7 +69,15 @@ rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 ping 192.168.1.255
 arp -n
 ```
+### add user to sudoers grp
 
+```
+sudo usermod -a -G sudo <user>
+```
+
+### Create and user
+Use `adduser`, its a front end for the more low-level `useradd`. 
+`adduser` creates the `$HOME` for the in-creation user, while `useradd` does not.
 
 ### Encrypt files in device
 
