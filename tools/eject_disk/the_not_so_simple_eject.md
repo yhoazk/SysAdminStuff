@@ -2,7 +2,7 @@
 
 ---
 <p style=" text-align:center">
-<img src="img/noice.png">
+<img src="../../img/noice.png">
 </p>
 
 

@@ -1,6 +1,11 @@
 # IPv4 Routing
 
 
+### Ranges for private network address
+
+`192.168.X.X` and `10.X.X.X` the ranges `172.16.0.0` - `172.31.255.255` is also
+reserved but is not used that often.
+
 ## What routers do
 
 A router connects different networks, without routers every network space is
@@ -51,6 +56,35 @@ Hosts/Net:	65534
 With the 16 bit prefix, the range for HostMin and HostMax now allows to have
 hosts with 0 and 255 address.
 
+
+## NAT Network Address
+
+The NAT is a method by which IP addresses are mapped from one group to another,
+transparent to the end users. Network Address Port Translation or NAPT is a
+method by which many network addresses and their TCP/UDP ports are translated
+into a single network address and TCP/UDP ports. Together, these two operations
+referred to as traditional NAT, provide a mechanism to connect a realm with
+private address to an external realm with globally unique registered addresses.
+
+The need for IP address translation arises when a network's internal IP address
+cannot be used outside the network either for provacy reasons or because they
+are invalid for use outside of the network.
+
+
+
+https://security.stackexchange.com/questions/44065/with-ipv6-do-we-need-to-use-nat-any-more
+
+#### NAT Fordwarding Table
+
+Some sort of hash table, where given an IP from one side of the network,
+returns the IP of the other side of the network.
+
+```
+Inner <---> HomeRouter <---> ISPRouter <---> The Internet
+```
+
+Each router has its own table so it can translate between the two domains.
+This is a simplification, as its possible to have 1:1 or 1:Many NAT.
 
 ## CIDR: Classless Inter-Domain Routing
 
