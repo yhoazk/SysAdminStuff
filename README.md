@@ -18,7 +18,15 @@ Linux and windows cofigurations snippets
   - umount /mnt
   - lvm
     - lvchange -an /dev/{pv-name-here}
+### Max partitions for MMC
 
+The linux kernel defines the number of partitios per MMC block device to be `CONFIG_MMC_BLOCK_MINORS`.
+This defines the number of minors per block device. One is needed for every partition on the disk, 
+plus one for the whole disk. Number of total MMC minors is 256, so your number of supported block devices
+will be limited by 256 divided by `CONFIG_MMC_BLOCK_MINORS`. Default is 8 to be backwards compatible with 
+previous hardwired device numbering.
+
+[src](https://cateee.net/lkddb/web-lkddb/MMC_BLOCK_MINORS.html)
 
 #### Commands:
 `pvs`:
@@ -175,7 +183,13 @@ Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 
 ## Which `tty` is being used:
 To know which tty device is currently in use, use the command `tty`
-which returns the device being used.
+which returns the device being used. 
+
+As a side note is important for logging programs to check and adapt for
+the case in which the print output is a tty and when a file, this to 
+take into account the buffering or pipe size. In the case of redirection
+with pipe the default size for a pipe named or not is 4k. If the buffer
+is not flushed some logs get lost in the pipe if not handled correctly.
 
 ## The install command:
 Install with non-sudo permisions in a `/` folder:
