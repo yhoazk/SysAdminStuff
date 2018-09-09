@@ -109,6 +109,26 @@ findstr /spin /c:"find in text" [files]
 grep -Riln 'Text to find' /<path>
 ```
 
+##### Chain grep
+
+Instead of chainig grep calls with pipes, use the next option.
+
+```
+grep -v -e <regexa> -e <regexb> -e <regexc> -e <regexd>...
+```
+
+Other option is to enable the flag `-E`.
+
+```
+grep -Ev '(regexa|regexb|regexc|...)'
+```
+
+Or use a file which contains all the patters, one per line.
+
+```
+grep -v -f patterns.txt
+```
+
 ```
 grep -rnw '/path/to/somewhere/' -e 'pattern'
 ```
