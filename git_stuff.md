@@ -73,4 +73,16 @@ To indicate which one (base, local, remote) select it with:
 * `ctrl+2`
 * `ctrl+3`
 
+## force-push-with-lease
 
+the git option `--force-with-lease` is a similar option to `--force` but it
+checks that the remote has not been updated and then is what we expect. ie the
+same as in our local branch.`--force-with-lease` only allows to force push if
+no one else has pushed changes to the remote. This is made with the values of
+the SHA hashes which incluide the parents.
+
+There is a subtle problem with `--force-with-lease`, as it checks with the
+local, then if a  `git fetch` is applied to update the local copy git will
+now see no difference and the `--force-with-lease` will overwrite the remote
+branch. The simple solution is to never fetch without merge, or simply always
+pull, never fetch.
