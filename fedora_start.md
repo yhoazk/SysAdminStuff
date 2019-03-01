@@ -6,6 +6,11 @@ Fedora provides group install packager, to list the available packages: `dnf gro
 
 To install one of the listed packages: `dnf groupinstall "<NameOfThePackage>"`
 
+The development package does not include `c++` to install it use
+```
+sudo dnf install gcc-c++
+```
+
 ### Install powerline for terminal
 
 [src](https://fedoramagazine.org/add-power-terminal-powerline/)
