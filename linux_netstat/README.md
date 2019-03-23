@@ -1,10 +1,47 @@
+# Debug Network issues
+
+## IP tables
+
+### Get logging 
+
+```
+iptables -A INPUT -j LOG --log-level 4
+```
+
+We can also add a specific tag to the log:
+
+```
+iptables -A INPUT -s 192.168.0.1 -j LOG --log-prefix '***SUSPECT***'
+```
+To change the file for the logs, edit the configuration fiel `/etc/rsyslog.conf`
+and add the line `kern.warninig /var/log/iptables.log` and restart the system
+in fedora with `sudo systemctl restart firewalld` and the same for `syslogd`
+
+## Find host in the network
+
+First cleant the `arp` register. When a ping is send it also sends an arp request.
+After the hosts response, check the arp responses with `arp -a`. 
+
+This option works in linux, where the broadcast option is present.
+```bash
+arp -c
+ping -b 192.168.1.255
+arp -a
+```
+
+For windows, a explicit broadcast has to be crafted:
+
+```batch
+arp -c
+for /l %i in (1,1,254) do ping -w 50 -n 1 192.168.0.%i
+arp -a
+```
+
 
 
 ## Monitor outgoing connections:
 
 netstat -nputw
-
-
 
 netstat -antup
 Here it can monitor all(a) listening numeric (n) tcp (t) and udp (u) process (p).
@@ -13,7 +50,7 @@ Here it can monitor all(a) listening numeric (n) tcp (t) and udp (u) process (p)
 Command: `ss`
 
 
-# Route command
+## Route command
 
 The command route is used to lookup the gatway and the interface
 which the system will use when trying to connect to the outside.
