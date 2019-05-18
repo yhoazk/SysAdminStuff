@@ -63,8 +63,13 @@ set t_Co=256
 
 ### Install ultimate gvim
 
+```
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+```
 
 ## Releasing space in fedora
+
 ### Clean occupied space in `/var/cache/PackageKit`
 
 This behaviour is a documented [bug](https://bugs.freedesktop.org/show_bug.cgi?id=80053#c6) and the contents can be cleared with the next command:
