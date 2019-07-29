@@ -5,10 +5,10 @@ and offers an IP in the given range
 """
 from scapy.all import DHCP_am
 from scapy.base_classes import Net
-dhcp_server = DHCP_am(iface="enp2s0f0u13", domain="example.com",
+dhcp_server = DHCP_am(iface="wlp8s0", domain="example.com",
                       pool=Net("192.168.3.0/24"),
                       network="192.168.3.0/24",
-                      gw="192.168.3.254",
+                      gw="192.168.9.254",
                       renewal_time=600, lease_time=3600)
 
 dhcp_server()
