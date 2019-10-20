@@ -21,9 +21,9 @@ Linux and windows cofigurations snippets
 ### Max partitions for MMC
 
 The linux kernel defines the number of partitios per MMC block device to be `CONFIG_MMC_BLOCK_MINORS`.
-This defines the number of minors per block device. One is needed for every partition on the disk, 
+This defines the number of minors per block device. One is needed for every partition on the disk,
 plus one for the whole disk. Number of total MMC minors is 256, so your number of supported block devices
-will be limited by 256 divided by `CONFIG_MMC_BLOCK_MINORS`. Default is 8 to be backwards compatible with 
+will be limited by 256 divided by `CONFIG_MMC_BLOCK_MINORS`. Default is 8 to be backwards compatible with
 previous hardwired device numbering.
 
 [src](https://cateee.net/lkddb/web-lkddb/MMC_BLOCK_MINORS.html)
@@ -84,7 +84,7 @@ sudo usermod -a -G sudo <user>
 ```
 
 ### Create and user
-Use `adduser`, its a front end for the more low-level `useradd`. 
+Use `adduser`, its a front end for the more low-level `useradd`.
 `adduser` creates the `$HOME` for the in-creation user, while `useradd` does not.
 
 ### Encrypt files in device
@@ -203,13 +203,15 @@ Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 
 ## Which `tty` is being used:
 To know which tty device is currently in use, use the command `tty`
-which returns the device being used. 
+which returns the device being used.
 
 As a side note is important for logging programs to check and adapt for
-the case in which the print output is a tty and when a file, this to 
+the case in which the print output is a tty and when a file, this to
 take into account the buffering or pipe size. In the case of redirection
 with pipe the default size for a pipe named or not is 4k. If the buffer
 is not flushed some logs get lost in the pipe if not handled correctly.
+
+### Modify IO buffer in the terminal
 
 ## The install command:
 Install with non-sudo permisions in a `/` folder:
@@ -236,3 +238,16 @@ subst z: \d :: delete the virtual drive
 ### 2. The [`\\?\`](https://reverseengineering.stackexchange.com/questions/3798/c-question-marks-in-paths)
 
 https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
+
+### `procfs` vs `sysfs`
+
+`sysfs` was designed to add structure to `sysproc` and provide a uniform way
+to expose system information and control points to user-space from the kernel.
+Now, the driver framework in the kernel automatically creates directories under
+`/sys` when drivers are registered, based on the type and the values in their
+data structures.
+
+- `procfs` allowa arbitrary `file_operations`, `sysfs` is more restricted.
+    - `procfs receives a file_operations struct, which contains function pointers that determine what happens to every file-based system call (open, read, mmap)
+- While `sysfs` there is ony two methods `show` and `store` which linux uses to implement the open, close, read, write and lseek .
+
