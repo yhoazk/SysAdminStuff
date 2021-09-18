@@ -201,6 +201,21 @@ wget https://www.example.com -OutFile out.html
 Invoke-WebRequest http://www.google.com/ -OutFile c:\google.html
 ```
 
+As an alternative use curl, it needs to add more paramenters to control
+the output which does not goes to the a file with the same name as wget:
+```
+curl <url> -o <filename>
+```
+
+To act the same as wget, add `{}` to the URL to create the filename or the
+folder structure. e.g.:
+
+```
+curl http://example.com/{dir}/{file}.pdf -o '#1/#2.pdf'
+```
+
+This will create the file `dir/file.pdf` with the same name.
+
 ## Which `tty` is being used:
 To know which tty device is currently in use, use the command `tty`
 which returns the device being used.
